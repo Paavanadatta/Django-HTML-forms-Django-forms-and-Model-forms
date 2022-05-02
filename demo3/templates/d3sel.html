@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Desc</th>
+            <th>Date</th>
+        </tr>
+        {% for i in res %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.desc }}</td>
+            <td>{{ i.date }}</td>
+            <td><a href="{% url 'demo3:update' pk=i.id %}">Update</a></td>
+            <td><a href="{% url 'demo3:delete' pk=i.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'demo3:enq' %}"></a>
+    <a href="{% url 'demo3:download' %}"></a>
+
+
+</body>
+</html>
